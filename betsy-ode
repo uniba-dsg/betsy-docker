@@ -1,0 +1,12 @@
+source common.sh
+
+setup-ode
+
+docker run betsy-ode sh betsy bpel ode --use-installed-engine "$*"
+
+params=`echo "$*" | tr ' =' '_'`
+folder=results/betsy-bpel-ode-$params-`date +%s`
+container=`docker ps -alq`
+
+extractLogs "$container" "$folder"
+open "$folder/test/reports/results.html"

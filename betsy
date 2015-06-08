@@ -1,0 +1,12 @@
+source common.sh
+
+setup-betsy
+
+docker run betsy sh betsy "$*"
+
+params=`echo "$*" | tr ' =' '_'`
+folder=results/$params-`date +%s`
+container=`docker ps -alq`
+
+extractLogs "$container" "$folder"
+open "$folder/test/reports/results.html"
