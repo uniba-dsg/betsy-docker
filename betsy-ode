@@ -1,6 +1,7 @@
+#!/bin/bash
 source common.sh
 
-setup-ode
+./setup-ode
 
 docker run betsy-ode sh betsy bpel ode --use-installed-engine "$*"
 
