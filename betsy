@@ -1,6 +1,7 @@
+#!/bin/bash
 source common.sh
 
-setup-betsy
+./setup-betsy
 
 docker run betsy sh betsy "$*"
 
