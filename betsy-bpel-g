@@ -1,0 +1,13 @@
+#!/bin/bash
+source common.sh
+
+./setup-bpel-g
+
+docker run betsy-bpel-g sh betsy bpel bpel-g --use-installed-engine "$*"
+
+params=`echo "$*" | tr ' =' '_'`
+folder=results/betsy-bpel-bpel-g-$params-`date +%s`
+container=`docker ps -alq`
+
+extractLogs "$container" "$folder"
+open "$folder/test/reports/results.html"

@@ -1,4 +1,4 @@
-# This is a Dockerfile to create an image with betsy installed.
+# This is a Dockerfile to create an image with betsy and the engine ode installed.
 
 # Version 1.0
 

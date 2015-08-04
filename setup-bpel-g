@@ -1,0 +1,3 @@
+./setup-betsy
+
+docker build --tag='betsy-bpel-g' --file=image/Dockerfile_bpel-g image 

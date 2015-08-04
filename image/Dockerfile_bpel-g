@@ -1,0 +1,10 @@
+# This is a Dockerfile to create an image with betsy and the engine bpel-g installed.
+
+# Version 1.0
+
+FROM betsy
+
+MAINTAINER Simon Harrer (simon.harrer@uni-bamberg.de)
+
+# install bpel-g
+RUN ./betsy engine bpel-g install

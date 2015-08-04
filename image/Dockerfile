@@ -20,7 +20,7 @@ RUN apt-get update && \
 # see http://stackoverflow.com/questions/27482504/dockerfile-cannot-access-git-repo-with-my-private-key
 RUN mkdir ~/.ssh
 RUN ssh-keyscan -t rsa github.com > ~/.ssh/known_hosts
-RUN git clone https://github.com/uniba-dsg/betsy && cd betsy && git checkout 8acee27
+RUN git clone https://github.com/uniba-dsg/betsy && cd betsy && git checkout 978d005a60
 
 WORKDIR betsy
 
