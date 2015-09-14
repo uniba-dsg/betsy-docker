@@ -1,12 +1,12 @@
 #!/bin/bash
 source common.sh
 
-./setup-ode
+./setup-camunda730
 
-docker run betsy-ode sh betsy bpel --use-installed-engine ode "$*"
+docker run betsy-camunda730 sh betsy bpmn --use-installed-engine camunda730 "$*"
 
 params=`echo "$*" | tr ' =' '_'`
-folder=results/betsy-bpel-ode-$params-`date +%s`
+folder=results/betsy-bpel-camunda730-$params-`date +%s`
 container=`docker ps -alq`
 
 extractLogs "$container" "$folder"

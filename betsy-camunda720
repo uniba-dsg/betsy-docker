@@ -1,12 +1,12 @@
 #!/bin/bash
 source common.sh
 
-./setup-bpel-g
+./setup-camunda720
 
-docker run betsy-bpel-g sh betsy bpel bpel-g --use-installed-engine "$*"
+docker run betsy-camunda720 sh betsy bpmn --use-installed-engine camunda720 "$*"
 
 params=`echo "$*" | tr ' =' '_'`
-folder=results/betsy-bpel-bpel-g-$params-`date +%s`
+folder=results/betsy-bpel-camunda720-$params-`date +%s`
 container=`docker ps -alq`
 
 extractLogs "$container" "$folder"

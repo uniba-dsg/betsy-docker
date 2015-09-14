@@ -1,12 +1,12 @@
 #!/bin/bash
 source common.sh
 
-./setup-ode
+./setup-activiti
 
-docker run betsy-ode sh betsy bpel --use-installed-engine ode "$*"
+docker run betsy-activiti sh betsy bpmn --use-installed-engine activiti "$*"
 
 params=`echo "$*" | tr ' =' '_'`
-folder=results/betsy-bpel-ode-$params-`date +%s`
+folder=results/betsy-bpel-activiti-$params-`date +%s`
 container=`docker ps -alq`
 
 extractLogs "$container" "$folder"

@@ -1,0 +1,3 @@
+./setup-betsy
+
+docker build --tag='betsy-camunda730' --file=image/Dockerfile_camunda730 image

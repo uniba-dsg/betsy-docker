@@ -1,0 +1,3 @@
+./setup-betsy
+
+docker build --tag='betsy-orchestra' --file=image/Dockerfile_orchestra image

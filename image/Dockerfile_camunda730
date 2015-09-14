@@ -1,0 +1,10 @@
+# This is a Dockerfile to create an image with betsy and the engine camunda730 installed.
+
+# Version 1.0
+
+FROM betsy
+
+MAINTAINER Simon Harrer (simon.harrer@uni-bamberg.de)
+
+# install camunda730
+RUN ./betsy engine camunda730 install
