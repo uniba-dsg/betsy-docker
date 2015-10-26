@@ -36,9 +36,9 @@ This repo contains both the Dockerfile and scripts to run a betsy command in Doc
 | Command        		                  | Input(Files)                    |Input (Argumnts)                                   | Output                                                                                                        |
 | ----------------------------------- | ------------------------------- |---------------------------------------------------|---------------------------------------------------------------------------------------------------------------|
 | [`./setup`](#setup)     | `./image/Dockerfile`|           |The docker image `./Image/DockerFile` is installed |                                                                                                               |
-| [`./betsy`](#betsy)						    | `./setup` `./common.sh`   | `bpel <Engine Group/Engine> <Process>`            |The process is executed on the engine and the logs are in the folder `./results/[Date in ms and arguments]`    |
+| [`./betsy`](#betsy)						    | `./setup` `./common.sh`   | `bpel <engine(s)> <process(es)>`            |The process is executed on the engine and the logs are in the folder `./results/[Date in ms and arguments]`    |
 | [`./setup-ENGINE`](#setup-engine)    		| `./image/Dockerfile_ENGINE`        |                                                   |The docker image `./Image/DockerFile_ENGINE` is installed                                                         |
-| [`./betsy-ENGINE`](#betsy-engine)				  | `./setup-ENGINE` `./common.sh`     | `<Process>`                                       |The process is executed on ENGINE and the logs are in the folder `./results/[Date in ms and arguments]`|
+| [`./betsy-ENGINE`](#betsy-engine)				  | `./setup-ENGINE` `./common.sh`     | `<process>`                                       |The process is executed on ENGINE and the logs are in the folder `./results/[Date in ms and arguments]`|
 
 
 ### setup
@@ -61,6 +61,8 @@ Examples:
 	./betsy bpel ALL ALL
 
 ### setup-ENGINE
+
+`./setup-ENGINE` builds the docker image `./image/Dockerfile_ENGINE` which installs the ENGINE ontop of the `betsy` image. 
 
 ### betsy-ENGINE
 
