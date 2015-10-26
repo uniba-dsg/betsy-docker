@@ -53,7 +53,7 @@ source common.sh
 
 ./setup-#{engine.name}
 
-docker run betsy-#{engine.name} sh betsy #{engine.type} --use-installed-engine #{engine.real_name} \"$*\"
+docker run betsy-#{engine.name} sh betsy #{engine.type} --keep-engine-running --use-installed-engine #{engine.real_name} \"$*\"
 
 params=`echo \"$*\" | tr ' =' '_'`
 folder=results/betsy-bpel-#{engine.name}-$params-`date +%s`
