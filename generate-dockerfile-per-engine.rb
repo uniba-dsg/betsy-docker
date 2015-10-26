@@ -60,7 +60,13 @@ folder=results/betsy-bpel-#{engine.name}-$params-`date +%s`
 container=`docker ps -alq`
 
 extractLogs \"$container\" \"$folder\"
-open \"$folder/test/reports/results.html\"
+# open \"$folder/test/reports/results.html\"
+"""
+end
+
+def setup_all_script(engines)
+"""#!/bin/bash
+#{engines.map { |e| "./betsy-#{e.name}" }.join("\n")}
 """
 end
 
@@ -72,3 +78,4 @@ engines.each do |engine|
 	File.write("betsy-#{engine.name}", start_shell_script(engine))
 
 end
+File.write("setup-all", setup_all_script(engines))
