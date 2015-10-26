@@ -1,20 +1,29 @@
 class Engine
-	attr_accessor :name, :type
+	attr_accessor :name, :type, :real_name
 
 	def initialize(name, type)
-		@name = name
+		@real_name = name
+		@name = @real_name.gsub("__", "")		
 		@type = type
 	end
 end
 
 engines = [
-	Engine.new("ode", :bpel),
-	Engine.new("bpelg", :bpel),
-	Engine.new("orchestra", :bpel),
-	Engine.new("active-bpel", :bpel),
-	Engine.new("activiti", :bpmn),
-	Engine.new("camunda720", :bpmn),
-	Engine.new("camunda730", :bpmn)
+	Engine.new("ode__1_3_6", :bpel),
+	Engine.new("ode__1_3_5", :bpel),
+	Engine.new("bpelg__5_3", :bpel),
+	Engine.new("activiti__5_15_1", :bpmn),
+	Engine.new("activiti__5_16_3", :bpmn),
+	Engine.new("activiti__5_17_0", :bpmn),
+	Engine.new("activiti__5_18_0", :bpmn),
+	Engine.new("jbpm__6_0_1", :bpmn),
+	Engine.new("jbpm__6_1_0", :bpmn),
+	Engine.new("jbpm__6_2_0", :bpmn),
+	Engine.new("jbpm__6_3_0", :bpmn),
+	Engine.new("camunda__7_0_0", :bpmn),
+	Engine.new("camunda__7_1_0", :bpmn),
+	Engine.new("camunda__7_2_0", :bpmn),
+	Engine.new("camunda__7_3_0", :bpmn)
 ]
 
 def dockerfile(engine)
@@ -26,13 +35,13 @@ FROM betsy
 
 MAINTAINER Simon Harrer (simon.harrer@uni-bamberg.de)
 
-# install #{engine.name}
-RUN ./betsy engine #{engine.name} install
+# install #{engine.real_name}
+RUN ./betsy engine #{engine.real_name} install
 """
 end
 
 def setup_shell_script(engine)
-"""./setup-betsy
+"""./setup
 
 docker build --tag='betsy-#{engine.name}' --file=image/Dockerfile_#{engine.name} image
 """
@@ -44,7 +53,7 @@ source common.sh
 
 ./setup-#{engine.name}
 
-docker run betsy-#{engine.name} sh betsy #{engine.type} --use-installed-engine #{engine.name} \"$*\"
+docker run betsy-#{engine.name} sh betsy #{engine.type} --use-installed-engine #{engine.real_name} \"$*\"
 
 params=`echo \"$*\" | tr ' =' '_'`
 folder=results/betsy-bpel-#{engine.name}-$params-`date +%s`

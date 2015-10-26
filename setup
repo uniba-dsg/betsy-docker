@@ -1,2 +1,1 @@
-./setup-betsy
-./setup-ode
+docker build --tag="betsy" image

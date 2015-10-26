@@ -1,3 +1,0 @@
-./setup-betsy
-
-docker build --tag='betsy-activiti' --file=image/Dockerfile_activiti image
