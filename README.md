@@ -38,7 +38,7 @@ This repo contains both the Dockerfile and scripts to run a betsy command in Doc
 
 ### Command overview
 
-| Command        		                  | Input(Files)                    |Input (Argumnts)                                   | Output                                                                                                        |
+| Command        		                  | Input(Files)                    |Input (Arguments)                                   | Output                                                                                                        |
 | ----------------------------------- | ------------------------------- |---------------------------------------------------|---------------------------------------------------------------------------------------------------------------|
 | [`./setup`](#setup)     | `./image/Dockerfile`|           |The docker image `./Image/DockerFile` is installed |                                                                                                               |
 | [`./betsy`](#betsy)						    | `./setup` `./common.sh`   | `bpel <engine(s)> <process(es)>`            |The process is executed on the engine and the logs are in the folder `./results/[Date in ms and arguments]`    |
