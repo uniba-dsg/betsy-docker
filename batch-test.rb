@@ -2,10 +2,10 @@ require "fileutils"
 
 engines = %w{
 jbpm6_0_1
-jbpm6_1_0
-jbpm6_2_0
-jbpm6_3_0
 }
+# jbpm6_1_0
+# jbpm6_2_0
+# jbpm6_3_0
 
 processes = %w{
 
@@ -121,10 +121,22 @@ Dir.glob("results").each do |f|
 	FileUtils.rm_r f
 end
 
+def self.run(cmd)
+	puts cmd
+	puts `sh #{cmd}`
+end
+
+run "docker-remove-all-stopped-containers"
+
+i = 1
+max = engines.size * processes.size
 engines.each do |engine|
 	processes.each do |process|
-		command = "betsy-#{engine} #{process}"
-		puts command
-		puts `#{command}`
+		puts "#{i}/#{max} - #{Time.now}"
+		run "betsy-#{engine} #{process}"
+		run "docker-remove-all-stopped-containers"
+		i += 1
 	end
 end
+
+

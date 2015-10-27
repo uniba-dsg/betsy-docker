@@ -12,18 +12,23 @@ This repo contains both the Dockerfile and scripts to run a betsy command in Doc
 
 	setup # creates the betsy image with betsy installed and compiled
 	betsy ARGS # executes betsy ARGS on `setup-betsy`
-
-	# generates Dockerfiles and start scripts for all engines
-	ruby generate-dockerfile-per-engine.rb
-	
-	# Example
-	setup-ode1_3_6 # creates the betsy-ode image with Apache ODE 1.3.5 already installed with betsy
-	betsy-ode1_3_6 PROCESS # executes a single PROCESS on `setup-ode`
+	docker-remove-all-stopped-containers # removes all stopped containers to free disk space
 
 	# Examples
 	betsy bpel ode__1_3_6 sequence
 	betsy engine ode__1_3_6 install
-	betsy-ode1_3_6 sequence
+
+	# generates Dockerfiles and start scripts for all engines
+	ruby generate-dockerfile-per-engine.rb
+
+	# generated files from the generate-dockerfile-per-engine.rb script
+	setup-all # sets up all docker images
+	setup-ENGINE # sets up the docker image for ENGINE
+	betsy-ENGINE # allows to test ENGINE
+	
+	# Examples
+	setup-ode1_3_6 # creates the betsy-ode image with Apache ODE 1.3.6 already installed with betsy
+	betsy-ode1_3_6 sequence # executes the process sequence on engine ode1_3_6
 
 ### Output
 

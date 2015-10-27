@@ -66,7 +66,7 @@ end
 
 def setup_all_script(engines)
 """#!/bin/bash
-#{engines.map { |e| "./betsy-#{e.name}" }.join("\n")}
+#{engines.map { |e| "./setup-#{e.name}" }.join("\n")}
 """
 end
 
