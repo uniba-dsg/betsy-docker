@@ -2,13 +2,41 @@ require "fileutils"
 
 engines = %w{
 jbpm6_0_1
+jbpm6_1_0
+jbpm6_2_0
+jbpm6_3_0
 }
-# jbpm6_1_0
-# jbpm6_2_0
-# jbpm6_3_0
 
 processes = %w{
-
+ExclusiveGateway
+ExclusiveGateway_Default
+ExclusiveGatewayMixed
+ExclusiveDiverging_InclusiveConverging
+InclusiveGateway
+InclusiveGateway_Default
+InclusiveDiverging_ExclusiveConverging
+ParallelGateway
+ParallelDiverging_ExclusiveConverging
+ParallelDiverging_InclusiveConverging
+ParallelGateway_TrueParallelism
+ComplexGateway
+EventBasedGateway_Signals
+EventBasedGateway_Timer
+CallActivity_Process
+CallActivity_GlobalTask
+MultiInstance_SubProcess
+MultiInstance_Task
+MultiInstance_Sequential
+MultiInstance_NoneBehavior
+MultiInstance_OneBehavior
+MultiInstance_AllBehavior
+MultiInstance_ComplexBehavior
+MultiInstance_Parallel
+Loop_SubProcess
+Loop_Task
+Loop_ConditionOnly
+Loop_Maximum
+Loop_NoIteration_TestBeforeFalse
 Loop_NoIteration_TestBeforeTrue
 SubProcess
 Transaction
