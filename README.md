@@ -78,3 +78,16 @@ This script `./betsy-ENGINE` is similar to the `./betsy` script. There is only o
 Examples:
 
 	./betsy-ENGINE sequence
+
+## How to setup docker
+
+	# install Docker Toolbox
+
+	# remove previously created image
+	docker-machine rm default
+
+	# create image with larger disk space
+	docker-machine create --virtualbox-disk-size "80000" --driver virtualbox default
+
+	# setup env
+	 eval "$(C:\Program Files\Docker Toolbox\docker-machine.exe env default)"
