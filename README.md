@@ -1,4 +1,4 @@
-# betsy + docker
+# betsy + docker [![](https://badge.imagelayers.io/simonharrer/betsy-docker:latest.svg)](https://imagelayers.io/?images=simonharrer/betsy-docker:latest 'Get your own badge on imagelayers.io')
 
 This repo contains both the Dockerfile and scripts to run a betsy command in Docker.
 
