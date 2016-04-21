@@ -9,6 +9,11 @@ activiti5_15_1
 activiti5_16_3
 activiti5_17_0
 activiti5_18_0
+activiti5_19_0
+jbpm__6_0_1
+jbpm__6_1_0
+jbpm__6_2_0
+jbpm__6_3_0
 }
 
 processes = %w{
@@ -45,6 +50,7 @@ Loop_NoIteration_TestBeforeTrue
 SubProcess
 Transaction
 AdHocSubProcess_Sequential
+AdHocSubProcess_Parallel
 Token_Cardinality_Explicit
 Token_Cardinality_Default
 Token_Cardinality_Split_Default
@@ -102,6 +108,8 @@ Multiple_Parallel_IntermediateEvent
 Multiple_IntermediateEvent_ThrowFirstEventDefinition
 Multiple_IntermediateEvent_ThrowLastEventDefinition
 Multiple_IntermediateThrowEvent
+Multiple_IntermediateEvent_MissingEvent
+Multiple_Parallel_IntermediateEvent_MissingEvent
 EventDefinitionRef_Error_EndEvent_TopLevel
 EventDefinitionRef_Error_StartEvent_EventSubProcess_Interrupting
 EventDefinitionRef_Signal_BoundaryEvent_SubProcess_NonInterrupting
@@ -120,8 +128,6 @@ MultiInstanceTask_NegativeLoopCardinality
 Token_StartQuantity_Two
 Token_StartQuantity_Zero
 Token_CompletionQuantity_Zero
-Multiple_IntermediateEvent_MissingEvent
-Multiple_Parallel_IntermediateEvent_MissingEvent
 DataObject_ReadWrite_String
 Property_ReadWrite_String
 WCP01_Sequence
@@ -136,7 +142,7 @@ WCP07_StructuredSynchronizingMerge
 WCP08_MultiMerge
 WCP09_Structured_Discriminator_ComplexGateway
 WCP09_Structured_Discriminator_MultiInstance
-WCP10_ArbitraryCycle
+WCP10_ArbitraryCycles
 WCP11_ImplicitTermination
 WCP12_MultipleInstancesWithoutSynchronization
 WCP13_MultipleInstancesWithAPrioriDesignTimeKnowledge
