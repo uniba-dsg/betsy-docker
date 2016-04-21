@@ -9,13 +9,27 @@ class Engine
 end
 
 engines = [
+	Engine.new("ode__1_3_6__in-memory", :bpel),
+	Engine.new("ode__1_3_5__in-memory", :bpel),
 	Engine.new("ode__1_3_6", :bpel),
 	Engine.new("ode__1_3_5", :bpel),
 	Engine.new("bpelg__5_3", :bpel),
+	Engine.new("openesb__3_0_5", :bpel),
+	Engine.new("orchestra__4_9", :bpel),
+	Engine.new("activebpel__5_0_2", :bpel),
+	Engine.new("petalsesb__4_0", :bpel),
+	Engine.new("petalsesb__4_1", :bpel),
+	Engine.new("bpelg__5_3__in-memory", :bpel),
+	Engine.new("wso2__3_2_0", :bpel),
+	Engine.new("wso2__3_1_0", :bpel),
+	Engine.new("wso2__3_0_0", :bpel),
+	Engine.new("wso2__2_1_2", :bpel),
+
 	Engine.new("activiti__5_15_1", :bpmn),
 	Engine.new("activiti__5_16_3", :bpmn),
 	Engine.new("activiti__5_17_0", :bpmn),
 	Engine.new("activiti__5_18_0", :bpmn),
+	Engine.new("activiti__5_19_0", :bpmn),
 	Engine.new("jbpm__6_0_1", :bpmn),
 	Engine.new("jbpm__6_1_0", :bpmn),
 	Engine.new("jbpm__6_2_0", :bpmn),
@@ -23,7 +37,8 @@ engines = [
 	Engine.new("camunda__7_0_0", :bpmn),
 	Engine.new("camunda__7_1_0", :bpmn),
 	Engine.new("camunda__7_2_0", :bpmn),
-	Engine.new("camunda__7_3_0", :bpmn)
+	Engine.new("camunda__7_3_0", :bpmn),
+	Engine.new("camunda__7_4_0", :bpmn)
 ]
 
 def dockerfile(engine)
