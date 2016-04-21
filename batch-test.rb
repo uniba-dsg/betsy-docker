@@ -1,10 +1,14 @@
 require "fileutils"
 
 engines = %w{
-jbpm6_0_1
-jbpm6_1_0
-jbpm6_2_0
-jbpm6_3_0
+camunda7_0_0
+camunda7_1_0
+camunda7_2_0
+camunda7_3_0
+activiti5_15_1
+activiti5_16_3
+activiti5_17_0
+activiti5_18_0
 }
 
 processes = %w{
@@ -151,7 +155,7 @@ end
 
 def self.run(cmd)
 	puts cmd
-	puts `sh #{cmd}`
+	puts `bash #{cmd}`
 end
 
 run "docker-remove-all-stopped-containers"

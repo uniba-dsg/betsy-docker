@@ -90,4 +90,4 @@ Examples:
 	docker-machine create --virtualbox-disk-size "80000" --driver virtualbox default
 
 	# setup env
-	 eval "$(C:\Program Files\Docker Toolbox\docker-machine.exe env default)"
+	eval "$(docker-machine env default)"
