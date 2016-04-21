@@ -55,8 +55,8 @@ source common.sh
 
 docker run betsy-#{engine.name} sh betsy #{engine.type} --keep-engine-running --use-installed-engine #{engine.real_name} \"$*\"
 
-params=`echo \"$*\" | tr ' =' '_'`
-folder=results/betsy-bpel-#{engine.name}-$params-`date +%s`
+params=`echo \"$*\" | tr ' =' '_'` | cut -c1-10
+folder=results/#{engine.name}-$params-`date +%s`
 container=`docker ps -alq`
 
 extractLogs \"$container\" \"$folder\"
