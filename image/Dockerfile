@@ -21,7 +21,7 @@ ENV JAVA7_HOME=/usr/lib/jvm/java-7-openjdk-amd64/jre
 
 # when copying the Dockerfile in the repo, this is no longer necessary
 # see http://stackoverflow.com/questions/27482504/dockerfile-cannot-access-git-repo-with-my-private-key
-RUN mkdir ~/.ssh
+RUN mkdir -p ~/.ssh
 RUN ssh-keyscan -t rsa github.com > ~/.ssh/known_hosts
 RUN git clone https://github.com/uniba-dsg/betsy && cd betsy && git checkout 723b7e41403194f82b1dddb310a13e06c284681d
 
