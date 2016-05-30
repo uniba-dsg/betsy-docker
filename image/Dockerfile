@@ -23,7 +23,7 @@ ENV JAVA7_HOME=/usr/lib/jvm/java-7-openjdk-amd64/jre
 # see http://stackoverflow.com/questions/27482504/dockerfile-cannot-access-git-repo-with-my-private-key
 RUN mkdir -p ~/.ssh
 RUN ssh-keyscan -t rsa github.com > ~/.ssh/known_hosts
-RUN git clone https://github.com/uniba-dsg/betsy && cd betsy && git checkout 31364533197e5471353a119b40ff0473ebc55dc3
+RUN git clone https://github.com/uniba-dsg/betsy && cd betsy && git checkout 6577fc0356d03b1c0318aa11600d2b401c8da6e7
 
 WORKDIR betsy
 

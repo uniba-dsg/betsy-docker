@@ -3,7 +3,7 @@ class Engine
 
 	def initialize(name, type)
 		@real_name = name
-		@name = @real_name.gsub("__", "")		
+		@name = @real_name.gsub("__", "")
 		@type = type
 	end
 end
@@ -30,10 +30,13 @@ engines = [
 	Engine.new("activiti__5_17_0", :bpmn),
 	Engine.new("activiti__5_18_0", :bpmn),
 	Engine.new("activiti__5_19_0", :bpmn),
+	Engine.new("activiti__5_19_0_2", :bpmn),
+	Engine.new("activiti__5_20_0", :bpmn),
 	Engine.new("jbpm__6_0_1", :bpmn),
 	Engine.new("jbpm__6_1_0", :bpmn),
 	Engine.new("jbpm__6_2_0", :bpmn),
 	Engine.new("jbpm__6_3_0", :bpmn),
+	Engine.new("jbpm__6_4_0", :bpmn),
 	Engine.new("camunda__7_0_0", :bpmn),
 	Engine.new("camunda__7_1_0", :bpmn),
 	Engine.new("camunda__7_2_0", :bpmn),
